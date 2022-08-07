@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './card.css'
 
 // const Card = ({name,price,image,description}) => {
@@ -22,7 +23,7 @@ const Card = (myitem) => {
                         <h6 className="card-title">{price}</h6>
                         <p className="card-text text-truncate"
                             title={description}>{description}</p>
-                        <button className='btn btn-warning'>View Details</button>
+                        <Link to={`/product/${myitem._id}`} className='btn btn-warning'>View Details</Link>
                     </div>
                 </div>
             </div>

@@ -4,13 +4,19 @@ import './App.css';
 import Second from './components/Second';
 import MyRoutes from './MyRoutes';
 import GlobalContextProvider from './components/GlobalContext';
+import { Provider } from 'react-redux';
+import store from './reducer/store';
 
 function App() {
+
+
   return (
     <div>
+      <Provider store={store}>
       <GlobalContextProvider>
       <MyRoutes/>
       </GlobalContextProvider>
+      </Provider>
     </div>
   );
 }

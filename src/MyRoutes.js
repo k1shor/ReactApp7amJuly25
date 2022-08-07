@@ -20,6 +20,11 @@ import Categories from "./components/Pages/Category/Categories";
 import AddCategory from "./components/Pages/Category/AddCategory";
 import EditCategory from "./components/Pages/Category/EditCategory";
 import DeleteCategory from "./components/Pages/Category/DeleteCategory";
+import Products from "./components/Pages/Products/Products";
+import AddProduct from "./components/Pages/Products/AddProduct";
+import EditProduct from "./components/Pages/Products/EditProduct";
+import DeleteProduct from "./components/Pages/Products/DeleteProduct";
+import ProductDetails from "./components/Pages/ProductDetails";
 
 
 const MyRoutes = () => {
@@ -49,12 +54,20 @@ const MyRoutes = () => {
         <Route path='/confirmuser/:token' element={<ConfirmUser />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
 
+        <Route path='/product/:id' element={<ProductDetails/>}/>
+
         <Route path="/" element={<AdminRoute />}>
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/category" element={<Categories/>}/>
           <Route path="/admin/category/new" element={<AddCategory/>}/>
           <Route path="/admin/category/edit/:id" element={<EditCategory/>}/>
           <Route path="/admin/category/delete/:id" element={<DeleteCategory/>}/>
+
+          <Route path="/admin/products" element={<Products/>}/>
+          <Route path="/admin/product/new" element={<AddProduct/>}/>
+          <Route path="/admin/product/update/:id" element={<EditProduct/>}/>
+          <Route path="/admin/product/delete/:id" element={<DeleteProduct/>}/>
+
 
         </Route>
       </Routes>
